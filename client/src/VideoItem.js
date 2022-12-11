@@ -14,8 +14,10 @@ export default function VideoItem({ video }) {
                         alt="THUMBNAIL"
                         src={video.snippet.thumbnails.medium.url}
                     />
-                    <div className="font-bold my-2">{video.snippet.title}</div>
-                    <div className="text-sm text-gray-700">
+                    <div className="font-bold my-2  hover:text-blue-800">
+                        {video.snippet.title}
+                    </div>
+                    <div className="text-sm text-gray-800">
                         {video.snippet.description}
                     </div>
                 </a>
