@@ -24,5 +24,5 @@ app.post("/", (req, res) => {
 
 
 app.listen(3001, () => {
-    // console.log("Listening on base URL - http://localhost:3001");
+    console.log("Listening on base URL - http://localhost:3001");
 });
