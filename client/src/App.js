@@ -19,7 +19,7 @@ function App() {
     e.preventDefault();
     let postData = { data: comment };
     axios
-      .post("http://localhost:3001/", postData)
+      .post("https://code-wizard-sigma.vercel.app/", postData)
       .then((response) => {
         setData(response.data);
       })
@@ -32,7 +32,7 @@ function App() {
         params: {
           part: "snippet",
           maxResults: 10,
-          key: "AIzaSyAc90K8NVx0OTE6lHH0t3Bf-Xr6QCROEy8",
+          key: `${process.env.YOUTUBE_API_KEY}`,
           q: comment,
         },
       })
