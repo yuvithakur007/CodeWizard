@@ -9,8 +9,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post("/", (req, res) => {
+    console.log("Listening on base URL1");
     let { body } = req;
     let code;
+
     fetch(body.data)
         .then((resData) => {
             code = resData.data.choices[0];
@@ -20,6 +22,7 @@ app.post("/", (req, res) => {
         .catch((err) => console.log(err));
 });
 
+
 app.listen(3001, () => {
-    console.log("Listening on base URL - http://localhost:3001");
+    // console.log("Listening on base URL - http://localhost:3001");
 });

@@ -7,8 +7,8 @@
         "dev": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Kartik Mehta",
-    "license": "MIT",
+    "author": "Yuvraj Singh",
+    "license": "",
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
