@@ -19,7 +19,7 @@ function App() {
     e.preventDefault();
     let postData = { data: comment };
     axios
-      .post("https://effulgent-pothos-6dbfa7.netlify.app/", postData)
+      .post("http://localhost:3001", postData)
       .then((response) => {
         setData(response.data);
       })
