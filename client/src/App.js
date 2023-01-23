@@ -19,7 +19,7 @@ function App() {
     e.preventDefault();
     let postData = { data: comment };
     axios
-      .post("https://snazzy-piroshki-ba93df.netlify.app/", postData)
+      .post("https://effulgent-pothos-6dbfa7.netlify.app/", postData)
       .then((response) => {
         setData(response.data);
       })
