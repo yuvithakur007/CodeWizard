@@ -1,10 +1,10 @@
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const fetch = require("./fetchCode.js");
 
 const app = express();
-// app.use(cors());
+app.use(cors());
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
