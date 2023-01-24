@@ -14,33 +14,42 @@ function App() {
   const [videos, setVideos] = useState([]);
   const [link, setLink] = useState("");
   const [id, setId] = useState("");
+  const [count, setCount] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let postData = { data: comment };
-    axios
-      .post("https://codewizard-backend.vercel.app/", postData)
-      .then((response) => {
-        console.log(response.data)
-        setData(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    setCount(count + 1);
+    localStorage.setItem("count", count);
 
-    youtube
-      .get("search", {
-        params: {
-          part: "snippet",
-          maxResults: 10,
-          key: "AIzaSyAc90K8NVx0OTE6lHH0t3Bf-Xr6QCROEy8",
-          q: comment,
-        },
-      })
-      .then((result) => {
-        setVideos(result.data.items);
-        console.log(videos);
-      });
+    const counter = localStorage.getItem("count");
+    if (counter < 3) {
+      let postData = { data: comment };
+      axios
+        .post("https://codewizard-backend.vercel.app/", postData)
+        .then((response) => {
+          console.log(response.data);
+          setData(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      youtube
+        .get("search", {
+          params: {
+            part: "snippet",
+            maxResults: 10,
+            key: "AIzaSyAc90K8NVx0OTE6lHH0t3Bf-Xr6QCROEy8",
+            q: comment,
+          },
+        })
+        .then((result) => {
+          setVideos(result.data.items);
+          console.log(videos);
+        });
+    } else {
+      window.alert("You have reached the limit of 3 requests per day");
+    }
   };
 
   const handleSubmitLink = (e) => {
