@@ -19,7 +19,7 @@ function App() {
     e.preventDefault();
     let postData = { data: comment };
     axios
-      .post("http://localhost:3001", postData)
+      .post("https://codewizard-backend.vercel.app/", postData)
       .then((response) => {
         setData(response.data);
       })
