@@ -21,6 +21,7 @@ function App() {
     axios
       .post("https://codewizard-backend.vercel.app/", postData)
       .then((response) => {
+        console.log(response.data)
         setData(response.data);
       })
       .catch((err) => {
@@ -189,7 +190,7 @@ function App() {
         </div>
       )}
       <div className="poppins text-lg text-white bg-black py-2 flex justify-center">
-        made with ❤️ for programmers
+        Made with ❤️ for programmers by Yuvraj Singh!
       </div>
     </div>
   );
