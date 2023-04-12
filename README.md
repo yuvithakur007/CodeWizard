@@ -3,6 +3,8 @@
 
 The application makes code completion easier by indicating the language and the issue the programmer is working with. Not only that, but it also suggests YouTube videos for instant assistance. An iframe has been put into the website so that programmers may view the video and the code side by side so it doesn’t have to jump between tabs.
 
+<img align="center" src="code wizard.jpg.png">
+
 ## 🔗 Links
 (https://code-wizard-sigma.vercel.app/)
 
