@@ -22,10 +22,10 @@ function App() {
     localStorage.setItem("count", count);
 
     const counter = localStorage.getItem("count");
-    if (counter < 3) {
+    if (counter < 10) {
       let postData = { data: comment };
       axios
-        .post("https://codewizard-backend.vercel.app/home", postData)
+        .post("http://localhost:3001/", postData)
         .then((response) => {
           console.log(response.data);
           setData(response.data);
