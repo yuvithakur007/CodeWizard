@@ -25,7 +25,7 @@ function App() {
     if (counter < 10) {
       let postData = { data: comment };
       axios
-        .post("http://localhost:3001/", postData)
+        .post("https://codewizard-backend.vercel.app/", postData)
         .then((response) => {
           console.log(response.data);
           setData(response.data);
