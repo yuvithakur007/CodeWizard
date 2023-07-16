@@ -6,6 +6,7 @@ import video from "./video.json";
 import Lottie from "lottie-react";
 import VideoList from "./VideoList.js";
 import youtube from "./api/Youtube";
+
 function App() {
   const [comment, setComment] = useState("");
   const [data, setData] = useState();
@@ -56,6 +57,7 @@ function App() {
     let id = link.split("=")[1];
     setId(id);
   };
+
   return (
     <div>
       <div className="poppins text-2xl font-bold text-white bg-black py-2 flex justify-center">
@@ -71,6 +73,7 @@ function App() {
             onChange={(e) => setComment(e.target.value)}
             placeholder="Comment"
           />
+
           <button
             className="bg-blue-700 hover:bg-white hover:text-blue-700 border-blue-700  border  text-white h-12 py-2 pt-2 px-4 ml-4 rounded focus:outline-none focus:shadow-outline poppins"
             type="submit"
@@ -153,6 +156,7 @@ function App() {
                   onChange={(e) => setLink(e.target.value)}
                   placeholder="Link"
                 />
+
                 <button
                   className="bg-blue-700 hover:bg-white hover:text-blue-700 border-blue-700 border  text-white h-12 py-2 pt-2 px-4 ml-4 rounded focus:outline-none focus:shadow-outline poppins"
                   type="submit"
