@@ -25,7 +25,7 @@ function App() {
     if (counter < 10) {
       let postData = { data: comment };
       axios
-        .post("https://codewizard-back.onrender.com", postData)
+        .post("https://codewizard-back.onrender.com/", postData)
         .then((response) => {
           console.log(response.data);
           setData(response.data);
