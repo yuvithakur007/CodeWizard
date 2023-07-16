@@ -6,7 +6,6 @@ import video from "./video.json";
 import Lottie from "lottie-react";
 import VideoList from "./VideoList.js";
 import youtube from "./api/Youtube";
-
 function App() {
   const [comment, setComment] = useState("");
   const [data, setData] = useState();
@@ -22,14 +21,10 @@ function App() {
     localStorage.setItem("count", count);
 
     const counter = localStorage.getItem("count");
-    if (counter < 10) {
+    if (counter < 3) {
       let postData = { data: comment };
       axios
-<<<<<<< HEAD
-        .post("https://codewizard-back.onrender.com/", postData)
-=======
-        .post("https://codewizard-back.onrender.com", postData)
->>>>>>> 94e70c5ac4a1c9aa104ad4ad9b5da1a49bbb6ddd
+        .post("https://codewizard-backend.vercel.app/", postData)
         .then((response) => {
           console.log(response.data);
           setData(response.data);
@@ -61,7 +56,6 @@ function App() {
     let id = link.split("=")[1];
     setId(id);
   };
-
   return (
     <div>
       <div className="poppins text-2xl font-bold text-white bg-black py-2 flex justify-center">
@@ -77,7 +71,6 @@ function App() {
             onChange={(e) => setComment(e.target.value)}
             placeholder="Comment"
           />
-
           <button
             className="bg-blue-700 hover:bg-white hover:text-blue-700 border-blue-700  border  text-white h-12 py-2 pt-2 px-4 ml-4 rounded focus:outline-none focus:shadow-outline poppins"
             type="submit"
@@ -160,7 +153,6 @@ function App() {
                   onChange={(e) => setLink(e.target.value)}
                   placeholder="Link"
                 />
-
                 <button
                   className="bg-blue-700 hover:bg-white hover:text-blue-700 border-blue-700 border  text-white h-12 py-2 pt-2 px-4 ml-4 rounded focus:outline-none focus:shadow-outline poppins"
                   type="submit"
@@ -208,5 +200,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
